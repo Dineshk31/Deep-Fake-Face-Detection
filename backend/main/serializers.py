@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . import models
 
-class UserSerializer(serializers.ModelSerializer):
+class VideoAnalysisSerializer(serializers.ModelSerializer):
     class Meta:
-        model=models.USER
-        fields = ['id', 'full_name', 'email', 'password', 'mobile']
+        model = models.VideoAnalysis
+        fields = '__all__' 
