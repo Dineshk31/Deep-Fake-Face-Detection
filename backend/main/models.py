@@ -1,15 +1,18 @@
 from django.db import models
 
 # Create your models here.
-# User Model
-class USER(models.Model):
-    full_name=models.CharField(max_length=100)
-    email=models.CharField(max_length=100)
-    password=models.CharField(max_length=50)
-    mobile=models.CharField(max_length=13)
-    
-    class Meta:
-        verbose_name_plural = "USER" 
-        
+
+class VideoAnalysis(models.Model):
+    VIDEO_STATUS_CHOICES = [
+        (0, 'Real'),
+        (1, 'Fake'),
+    ]
+
+    video = models.FileField(upload_to='videos/')
+    result = models.IntegerField(choices=VIDEO_STATUS_CHOICES)
+    confidence_real = models.FloatField()
+    confidence_fake = models.FloatField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
-        return self.full_name
+        return f"Analysis on {self.timestamp}: {self.get_result_display()}"
