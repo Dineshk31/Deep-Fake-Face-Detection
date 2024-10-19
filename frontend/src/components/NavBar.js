@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaPhone, FaUserCircle } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaPhone } from 'react-icons/fa';
 
 function NavBar() {
   return (
@@ -52,31 +52,18 @@ function NavBar() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link text-white" to="/" style={{ fontSize: '18px' }}>
-                <FaHome style={{ marginRight: '5px' }} /> Home
+              <i class="bi bi-house-door"></i> Home
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="/about-us" style={{ fontSize: '18px' }}>
-                <FaInfoCircle style={{ marginRight: '5px' }} /> About Us
+              <i class="bi bi-info-circle"></i> About Us
               </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link text-white" href="https://park-portfolio.netlify.app/" style={{ fontSize: '18px' }}>
-                <FaPhone style={{ marginRight: '5px' }} /> Contact Us
+              <i class="bi bi-headset"></i> Contact Us
               </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false" style={{ fontSize: '18px' }}>
-                <FaUserCircle style={{ marginRight: '5px' }} /> USER
-              </a>
-              <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
-                <li><Link className="dropdown-item text-light" to="/user-login">Login</Link></li>
-                <li><Link className="dropdown-item text-light" to="/user-register">Register</Link></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item text-light" to="/user-dashboard">Dashboard</Link></li>
-                <li><Link className="dropdown-item text-light" to="/logout">Logout</Link></li>
-              </ul>
             </li>
           </ul>
         </div>
